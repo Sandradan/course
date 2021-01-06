@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
 
@@ -101,8 +102,103 @@
     <a href="http://qq.com" download>xiazai</a>
     <a href="https://www.w3school.com.cn/i/w3school_logo_white.gif" download="w3logo">
         <img border="0" src="/i/w3school_logo_white.gif" alt="W3School">
-        </a>
+    </a>
 </body>
 
 </html>
 <a href="javascript:;"> qq </a>
+<form action="users" method="GET">
+    <label>用户名<input name="username" type="text" placeholder="username" value="sandra"></label>
+    <label>密码<input name="password" type="password"></label>
+    喜欢的水果
+    <label>橘子<input name="checkbox" type="checkbox"></label>
+    <label>香蕉<input name="checkbox" type="checkbox"></label>
+    爱我
+    <label>yes<input name="radio" type="radio"></label>
+    <label>no<input name="radio" type="radio"></label>
+    <input type="submit" value="submit">
+    <button type="submit">submit</button>
+    <button>submit</button>
+    <button type="button">button</button>
+
+</form>
+
+
+<!-- table -->
+
+<table border="1" style="text-align: center;">
+    <thead>
+        <colgroup>
+            <col width=100>
+            <col width=200 bgcolor="#f1f1f1">
+            <col width=100>
+            <col width=70>
+        </colgroup>
+        <tr>
+            <!--行 -->
+            <th>项目</th>
+            <!--一列 -->
+            <th>姓名</th>
+            <!--表头 -->
+            <th>班级</th>
+            <!--表头 -->
+            <th>分数</th>
+            <!--表头 -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!--行 -->
+            <th></th>
+            <!--表头 -->
+            <td>小明</td>
+            <!--一列 -->
+            <td>94</td>
+            <td>99</td>
+        </tr>
+        <tr>
+            <!--行 -->
+            <th></th>
+            <!--表头 -->
+            <td>小红</td>
+            <!--一列 -->
+            <td>93</td>
+            <td>95</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <!--行 -->
+            <th>平均分</th>
+            <!--表头 -->
+            <td></td>
+            <!--一列 -->
+            <td></td>
+            <td>93</td>
+        </tr>
+        <tr>
+            <!--行 -->
+            <th>总分</th>
+            <!--表头 -->
+            <td></td>
+            <!--一列 -->
+            <td></td>
+            <td>95</td>
+        </tr>
+    </tfoot>
+</table>
+
+
+<a href="./index.html" download>下载index</a>
+
+<a href="qq.com">xxx</a>       <!--qq.com作为某个文件处理 -->
+<a href="http://qq.com">xxx</a>         <!--打开这个网址，qq.com为域名-->
+<a href="//qq.com">xxx</a>      <!--无协议链接，点击xxx浏览器会以当前页面所支持的协议打开-->
+<a href="#top">xxx</a>      <!--返回页面顶部-->
+<a href="#">xxx</a>         <!--页面锚点变为#，跳转页面顶部-->
+<a href="#xxx">xxx</a>      <!--跳到该页面的锚点#-->
+<a href="?name-xxx">xxx</a>         <!--name-xxx作为查询参数加到网址后面-->
+<a href="JavaScript:alert(2)">xxx</a>       <!--点击执行js的alert函数，弹出弹框-->
+<a href="">xxx</a>      <!--刷新页面-->
+<a href="javascript:;"></a>         <!--什么都不做-->
+<a href="/..">xxx</a>       <!--浏览器发起GET/HTTP/1.1的请求-->
