@@ -1,67 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="resume.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resume.css">
     <title>my resume</title>
+    <script src="//at.alicdn.com/t/font_2318629_w68f43fmnu.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
     <!-- 导航 -->
-    <div class="topNavBar">
-        <img src="#" alt="log" srcset="">
-        <nav>
-            <ul>
-                <li> <a href="">SKILLS</a> </li>
-                <li> <a href="">EXPERIENCE </a> </li>
-                <li> <a href="">PRICING</a> </li>
-                <li> <a href="">BLOG</a> </li>
-                <li> <a href="">CALENDRAR</a> </li>
-                <li> <a href="">CONTACT</a> </li>
-                <li> <a href="">OTHER</a> </li>
-                <li> <a href="">ALL DEMOS</a> </li>
-        </nav>
-        </ul>
+    <div class="box">
+        <div class="topNavBar clearfix">
+            <a href="#" class="logo"><span>Rs </span>card</a>
+            <nav class="navContainer" style="float:right">
+                <ul class="clearfix">
+                    <li> <a href="">SKILLS</a> </li>
+                    <li> <a href="">EXPERIENCE </a> </li>
+                    <li> <a href="">PRICING</a> </li>
+                    <li> <a href="">BLOG</a> </li>
+                    <li> <a href="">CALENDRAR</a> </li>
+                    <li> <a href="">CONTACT</a> </li>
+                    <li> <a href="">OTHER</a> </li>
+                    <li> <a href="">ALL DEMOS</a> </li>
+                </ul>
+            </nav>
+
+        </div>
     </div>
     <!-- banner图 -->
-    <div class="banner"></div>
+    <div class="banner">
+        <div class="mask">
+            <div class="text"></div>
+        </div>
+
+    </div>
     <!-- 主内容 -->
-    <main class="">
+    <main class="usercard">
 
         <!-- 简历 -->
-        <div class="profile">
+        <div class="profile clearfix" >
             <!-- 图片 -->
-            <img src="" alt="">
+            <img src="./avatar.jpg" alt="">
             <!-- 右侧文字 -->
             <div class="text">
-                <span>welcome</span>
+                <span class="welBox">welcome
+                    <span class="triangle"></span>
+                </span>
                 <h1> I'm Robert Smith</h1>
                 <p>Developer and Startup entrepreneur</p>
                 <hr>
                 <dl>
-                    <dt>age</dt>
+                    <dt>Age</dt>
                     <dd>29</dd>
-                    <dt>addreww</dt>
+                    <dt>Address</dt>
                     <dd>werwer</dd>
-                    <dt>e-mail</dt>
+                    <dt>E-mail</dt>
                     <dd>robersmigf@company.com</dd>
-                    <dt>phone</dt>
+                    <dt>Phone</dt>
                     <dd>1233435</dd>
-                    <dt>freelance</dt>
+                    <dt>Freelance</dt>
                     <dd>till March 25,2016</dd>
                 </dl>
             </div>
         </div>
         <!-- 友情链接 -->
         <div class="media">
-            <a href="" class="imgBox"></a>
-            <a href="" class="imgBox"></a>
-            <a href="" class="imgBox"></a>
-            <a href="" class="imgBox"></a>
-            <a href="" class="imgBox"></a>
-            <a href="" class="imgBox"></a>
-            <a href="" class="imgBox"></a>
+            <a href="" class="imgBox">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-GitHub"></use>
+                </svg>
+            </a>
+            
+            
+            <a href="" class="imgBox">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-14"></use>
+                </svg>
+            </a>
+            <a href="" class="imgBox">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            </a>
 
         </div>
     </main>
@@ -98,10 +128,7 @@
         </div>
 
     </section>
-   
+
 </body>
 
 </html>
-
-
-

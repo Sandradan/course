@@ -1,4 +1,160 @@
 body{
-background: #f9f9f9;
+background: #f1f1f1;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+
+    text-decoration: none;
+}
+.logo span{
+
+    font-family: "arial";
+}
+.box{
+width: 100%;
+position: fixed;
+}
+.topNavBar{
+    padding: 10px;
+}
+.topNavBar .logo{
+float: left;
+padding: 20px;
+color: #a09b98;
+font-size: 30px;
+font-weight: bold;
+}
+.topNavBar .logo span{
+color:#e8676b;
+font-size: 40px;
+}
+
+.topNavBar .clearfix li{
+float: left;
+list-style: none;
+margin: 20px;
+padding:16px 0;
+}
+/* .clearfix::after,
+.topNavBar::after{
+    content: "";
+    display: block;
+    clear: both;
+} */
+.clearfix{
+    overflow: hidden;
+}
+
+.topNavBar .clearfix li a{
+    color: #a09b98;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.topNavBar .clearfix li a:hover{
+    border-bottom: solid 3px rgb(221, 0, 0);
+
+}
+
+/* banner */
+.banner{
+   
+    height: 515px;
+    background-image: url("./rs-cover.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+.mask{
+    background:rgba(0,0,0,0.8);
+    height: 515px;
+    
+}
+.mask .text{
+    text-align: center;
+    
+}
+
+/* 主内容 */
+
+.usercard{
+    max-width: 940px;
+    background: #fff;
+    margin: auto;
+}
+.profile{
+    padding: 50px;
+}
+.profile .text .welBox{
+    padding: 5px;
+    background: #e8676b;
+    color: white;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 26px;
+}
+.profile .text .triangle{
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: solid 10px transparent;
+    border-left-color: #e8676b;
+    border-top-width: 0;
+    position: absolute;
+    top: 100%;
+    left: 4px;
+}
+.profile .text,
+.profile img{
+    float: left;
+}
+.profile img{
+    margin-right: 65px;
+}
+.profile .text{
+    width: 470px;
+}
+hr{
+    margin:20px 0;
+    width: 470px;
+    border: 1px solid #DEDEDE;
+}
+.usercard dl dt,
+.usercard dl dd{
+    float: left;
+}
+.usercard dl dt{
+    width: 30%;
+    font-weight: bold;
+    padding: 5px 0;
+}
+.usercard dl dd{
+    width: 70%;
+    color: #999;
+    padding: 5px 0;
+}
+.media{
+    text-align: center;
+    background: #e8676b;
+    padding: 5px;
+}
+.imgBox svg{
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+}
+.media a{
+    display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    border-radius: 50%;
+    padding: 5px 0;
+    margin:16px;
+}
+.media a:hover{
+background:rgba(0,0,0,0.1);
 
 }
