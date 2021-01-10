@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./resume.css">
     <title>my resume</title>
-    <script src="//at.alicdn.com/t/font_2318629_w68f43fmnu.js"></script>
+    <!-- <script src="//at.alicdn.com/t/font_2318629_w68f43fmnu.js"></script> -->
     <style type="text/css">
         .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -48,7 +49,7 @@
     <main class="usercard">
 
         <!-- 简历 -->
-        <div class="profile clearfix" >
+        <div class="profile clearfix">
             <!-- 图片 -->
             <img src="./avatar.jpg" alt="">
             <!-- 右侧文字 -->
@@ -80,8 +81,8 @@
                     <use xlink:href="#icon-GitHub"></use>
                 </svg>
             </a>
-            
-            
+
+
             <a href="" class="imgBox">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-14"></use>
@@ -96,39 +97,88 @@
         </div>
     </main>
     <!-- 按钮下载 -->
-    <a class="button" href="/">download resume</a>
-    <p>方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
+    <div class="download">
+        <a class="button" href="1.txt" downnload target="_blank">DOWNLOAD RESUME</a>
+    </div>
+    <p class="selfIntroduction">方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
         技能：前端开发，Rails 开发，Node.js 开发</p>
 
-    <section>
-        <h2>professional skills</h2>
-        <ol>
-            <li>wordpress &amp;adn</li>
-            <li>javascript</li>
-            <li>wordpress</li>
-            <li>wordpress</li>
-            <li>wordpress</li>
-            <li>wordpress</li>
+    <section class="skills">
+        <h2 class="title">Professional skills</h2>
+        <ol class="skillContainer clearfix">
+            <li>wordpress &amp;adn
+                <div class="progressBar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>javascript
+                <div class="progressBar">
+                    <div class="progress" style="width: 20%;"></div>
+                </div>
+            </li>
+            <li>wordpress
+                <div class="progressBar">
+                    <div class="progress" style="width: 40%;"></div>
+                </div>
+            </li>
+            <li>wordpress
+                <div class="progressBar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+            </li>
+            <li>wordpress
+                <div class="progressBar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </li>
+            <li>wordpress
+                <div class="progressBar">
+                    <div class="progress" style="width: 10%;"></div>
+                </div>
+            </li>
         </ol>
     </section>
 
-    <section>
+    <section class="portfoli">
 
-        <h2>作品集</h2>
-        <ol>
-            <li>all</li>
-            <li>pgotography</li>
-            <li>ux</li>
-        </ol>
+        <h2 class="title">作品集</h2>
+        <nav>
+            <ol class="portfoliContainer clearfix">
+                <li id="nav1">all</li>
+                <li id="nav2">pgotography</li>
+                <li id="nav3">ux/ui</li>
+            </ol>
+            <div id="portfoliBar" class="bar state-1">
+              <div class="barinner"></div>  
+            </div>
+        </nav>
+       
         <div class="jobs">
-            <div class="imgBox"></div>
-            <div class="imgBox"></div>
-            <div class="imgBox"></div>
+            <div class="imgBox1">
+                <img src="./sdf.png" alt="">
+            </div>
+            <div class="imgBox2">
+                <img src="./sdf23.png" alt="">
+            </div>
+            <div class="imgBox2">
+                <img src="./sdf23.png" alt="">
+            </div>
 
         </div>
 
     </section>
 
+    <script>
+        nav1.onclick=function(){
+            portfoliBar.className = "bar state-1"
+        }
+        nav2.onclick=function(){
+            portfoliBar.className = "bar state-2"
+        }
+        nav3.onclick=function(){
+            portfoliBar.className = "bar state-3"
+        }
+    </script>
 </body>
 
 </html>
