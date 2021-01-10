@@ -84,6 +84,7 @@ padding:16px 0;
     max-width: 940px;
     background: #fff;
     margin: auto;
+    margin-top: -400px;
 }
 .profile{
     padding: 50px;
@@ -122,6 +123,7 @@ hr{
     width: 470px;
     border: 1px solid #DEDEDE;
 }
+
 .usercard dl dt,
 .usercard dl dd{
     float: left;
