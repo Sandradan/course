@@ -1,0 +1,46 @@
+a <- {
+    "0":0,
+    "1":2,
+    "2":1,
+    "3":56,
+    "4":3,
+    "5":67,
+    "length":7
+}
+ hash<- {
+
+ }
+  index<- 0
+  while(index <a["length"]){
+      number = a[index]
+      while(hash[number] == undefined){
+          hash[number] = 1
+      }else{
+          has[number] = has[number+1]
+      }
+      index = index+1
+  }
+
+
+
+index2<-0
+max <- findMax(a)
+newArr <- {}
+
+while (index2 < max+1){
+    count = has[index]
+    if count !=undefined{
+    countIndex = 0
+    while(countIndex < count ){
+        newArr.push(index2)
+        countIndex <-countIndex + 1
+    }
+    }
+    index2 = index2 + 1
+}
+print newArr
+
+
+
+
+
