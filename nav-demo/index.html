@@ -54,7 +54,12 @@
 
             index = index + 1
         }
-
+        document.onkeypress = function(xartek){
+            key = xartek.key
+            website = hash[key]
+            console.log(website)
+            location.href = 'http://' + website
+        }
     </script>
 </body>
 
