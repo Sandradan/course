@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航</title>
+    <link rel="stylesheet" href="./keypress.css">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper" id="y"></div>
+    </main>
+    <script>
+        keys = {
+            0: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            1: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+            2: ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+            length: 3
+        }
+        hash = {
+            q: 'qq.com',
+            w: 'weibo.com',
+            e: 'ele.me',
+            r: 'renren.com',
+            t: 'tianya.com',
+            y: 'yahoo.cn',
+            u: 'uc.com',
+            i: 'iqiyi.com',
+            o: 'opera.com',
+            p: undefined,
+            a: 'acfun.tv',
+            s: 'sohu.com',
+            z: 'zhihu.com',
+            m: 'www.mcdonalds.cn'
+        }
+        //取出localStorage中的zz对应的hash
+        hashInLocalStorage = JSON.parse(localStorage.getItem('zz') || 'null')
+        if (hashInLocalStorage) {
+            hash = hashInLocalStorage
+        }
+
+        index = 0;
+        while (index < keys.length) {
+            x = document.createElement('div');
+            row = keys[index]
+            y.appendChild(x);
+            index2 = 0;
+            while (index2 < row.length) {
+                z = document.createElement('kbd');
+                z.textContent = row[index2]
+                edit = document.createElement('button');
+                z.appendChild(edit)
+                edit.textContent = "edit"
+                edit.className = row[index2]
+                edit.onclick = function (event) {
+                    //event.target 就是用户点击的元素
+                    key = event.target.className;  //q w e r
+                    x = prompt('给我一个网址'); //qq.com
+                    hash[key] = x //hash变更
+                    localStorage.setItem('zz', JSON.stringify(hash))
+                    console.log(hash)
+                }
+                x.appendChild(z);
+                index2 += 1;
+            }
+
+            index += 1;
+        }
+
+        document.onkeypress = function (event) {
+            value = event.key;
+            console.log(event)
+            website = 'http://' + hash[value];
+            console.log(website)
+            window.open(website, "_blank")
+        }
+    </script>
+</body>
+
+</html>

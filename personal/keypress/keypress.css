@@ -1,0 +1,40 @@
+
+*{
+    margin:0;
+    padding: 0;
+}
+kbd{
+    border:solid 1px red;
+    width: 4rem;
+    height:4rem;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 2rem;
+}
+.wrapper>div:nth-child(2){
+    margin-left: 10px;
+}
+.wrapper>div:nth-child(3){
+    margin-left:20px;
+}
+.wrapper div{
+    text-align: center;
+}
+ .wrapper kbd button{
+     background-color: transparent;
+     border:0;
+     position: absolute;
+     bottom:0;
+     right: 0;
+     display: none;
+    font-size: 1rem;
+
+ }
+ kbd:hover button{
+     display: inline-block;
+ }
+ kbd:focus button{
+    background: transparent;
+    border: 0;
+}
