@@ -10,69 +10,100 @@
 
 <body>
     <main>
-        <div class="wrapper" id="y"></div>
+        <div class="wrapper" id="main"></div>
     </main>
     <script>
-        keys = {
+        // 1.初始化数据
+        var keys = {
             0: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
             1: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
             2: ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
             length: 3
         }
-        hash = {
-            q: 'qq.com',
+        var hash = {
+            q: undefined,
             w: 'weibo.com',
             e: 'ele.me',
-            r: 'renren.com',
-            t: 'tianya.com',
+            r: undefined,
+            t: undefined,
             y: 'yahoo.cn',
-            u: 'uc.com',
+            u: undefined,
             i: 'iqiyi.com',
             o: 'opera.com',
             p: undefined,
-            a: 'acfun.tv',
-            s: 'sohu.com',
+            a: undefined,
+            s: undefined,
             z: 'zhihu.com',
-            m: 'www.mcdonalds.cn'
+            m: undefined
         }
         //取出localStorage中的zz对应的hash
-        hashInLocalStorage = JSON.parse(localStorage.getItem('zz') || 'null')
+        var hashInLocalStorage = getFromLoacalStorage('zz')
+
+
+        function getFromLoacalStorage(name){
+            return JSON.parse(localStorage.getItem(name) || 'null')
+        }
+        function tag(tagname){
+            return document.createElement(tagname)
+        }
+
         if (hashInLocalStorage) {
             hash = hashInLocalStorage
         }
+        //2.生成键盘
+        // 遍历keys，生成kbd 标签
+        for(index = 0; index < keys.length; index++){
+            var div = tag('div');
+            var row = keys[index]
+            main.appendChild(div);
+            div.className = 'keyContainer'
+            for(index2 = 0; index2 < row.length;index2++){
+                var kbd = tag('kbd');
+                // kbd.textContent = row[index2]
+                kbd.className = 'key'
+                var span = tag('span');
+                span.textContent = row[index2]
+                kbd.appendChild(span)
+                var button = tag('button');
+                kbd.appendChild(button)
+                button.textContent = "edit"
+                button.className = row[index2]
+                var image = tag('img')
+                if (hash[keys[index][index2]]) {
+                    image.src = 'http://' + hash[keys[index][index2]] + '/favicon.ico'
+                }
+                else {
+                    image.src = '//img01.jituwang.com/190913/256513-1Z913200J955.jpg'
+                }
 
-        index = 0;
-        while (index < keys.length) {
-            x = document.createElement('div');
-            row = keys[index]
-            y.appendChild(x);
-            index2 = 0;
-            while (index2 < row.length) {
-                z = document.createElement('kbd');
-                z.textContent = row[index2]
-                edit = document.createElement('button');
-                z.appendChild(edit)
-                edit.textContent = "edit"
-                edit.className = row[index2]
-                edit.onclick = function (event) {
+                image.onerror = function (event) {
+                    event.target.src = 'http://weibo.com' + '/favicon.ico'
+                }
+                button.onclick = function (event) {
+                    var button2 = event['target']
+                    image2 = button2.nextSibling
                     //event.target 就是用户点击的元素
-                    key = event.target.className;  //q w e r
-                    x = prompt('给我一个网址'); //qq.com
-                    hash[key] = x //hash变更
+                    var key = event.target.className;  //q w e r
+                    var newwebsite = prompt('给我一个网址'); //qq.com
+                    hash[key] = newwebsite //hash变更
+                    image2.src = 'http://' + newwebsite + '/favicon.ico'
+                    image2.onerror = function (event) {
+                        event.target.src = 'http://weibo.com' + '/favicon.ico'
+                    }
                     localStorage.setItem('zz', JSON.stringify(hash))
                     console.log(hash)
                 }
-                x.appendChild(z);
-                index2 += 1;
+                div.appendChild(kbd);
+                kbd.appendChild(image)
             }
-
-            index += 1;
+           
         }
-
+       
+        //3.监听键盘
         document.onkeypress = function (event) {
-            value = event.key;
+            var value = event.key;
             console.log(event)
-            website = 'http://' + hash[value];
+            var website = 'http://' + hash[value];
             console.log(website)
             window.open(website, "_blank")
         }
