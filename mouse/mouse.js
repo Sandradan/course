@@ -1,6 +1,6 @@
 var canvas = document.getElementById('xxx');
 var ctx = canvas.getContext('2d');
-var era = document.getElementById('eraser');
+var eraser = document.getElementById('eraser');
 
 var pageWidth = document.documentElement.clientWidth;
 var pageHeight = document.documentElement.clientHeight;
@@ -70,6 +70,7 @@ function drawCircle(x, y, radius) {
 
 function drawLine(x1, y1, x2, y2) {
   ctx.beginPath();
+  ctx.lineWidth = 5;
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.stroke();
