@@ -12,7 +12,7 @@ window.onresize = function () {
   canvas.width = pageWidth;
   canvas.height = pageHeight;
 };
-using = false;
+ var using = false;
 var lastPoint;
 canvas.onmousedown = function (e) {
 
@@ -70,7 +70,7 @@ function drawCircle(x, y, radius) {
 
 function drawLine(x1, y1, x2, y2) {
   ctx.beginPath();
-  ctx.lineWidth = 5;
+  ctx.lineWidth = 10;
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.stroke();
