@@ -1,0 +1,38 @@
+.loading{
+    width:300px;
+    height:300px;
+    /* border:1px solid red; */
+    position:relative;
+  
+  }
+  .loading::before,.loading::after{
+    content:'';
+    width:0px;
+    height:0px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    animation: 3s slidein linear infinite;
+  }
+  
+  .loading::after{
+    animation-delay:1s;
+  }
+  @keyframes slidein {
+   0% { 
+       width:0;
+       height:0;
+       opacity:1;
+   }
+  
+    100% { 
+      width:100px;
+      height:100px;
+      opacity:0;
+    }
+  }
