@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./loading.css">
     <title>my resume</title>
     <!-- <script src="//at.alicdn.com/t/font_2318629_w68f43fmnu.js"></script> -->
-    
+
     <style type="text/css">
         .icon {
             width: 1em;
@@ -80,7 +80,7 @@
 
     </div>
     <!-- 主内容 -->
-    <main id="siteAbout" class="usercard">
+    <main data-x id="siteAbout" class="usercard">
 
         <!-- 简历 -->
         <div class="profile clearfix">
@@ -137,7 +137,7 @@
     <p class="selfIntroduction">方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
         技能：前端开发，Rails 开发，Node.js 开发</p>
 
-    <section id="siteSkill" class="skills">
+    <section data-x id="siteSkill" class="skills">
         <h2 class="title">Professional skills</h2>
         <ol class="skillContainer clearfix">
             <li>wordpress &amp;adn
@@ -173,7 +173,7 @@
         </ol>
     </section>
 
-    <section id="sitePortfoli" class="portfoli">
+    <section data-x id="sitePortfoli" class="portfoli">
 
         <h2 class="title">Protfoli</h2>
         <nav>
@@ -219,10 +219,33 @@
         }, 2000);
         window.onscroll = function () {
             (window.scrollY > 0) ? topbar.classList.add('sticky') : topbar.classList.remove('sticky');
+
+             // 滚动页面导航高亮
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    minIndex = i;
+                }
+            }
+            for (let i = 0; i < specialTags.length; i++) {
+               specialTags[i].classList.remove('highlight');
+            }
+            // console.log(minIndex)
+            specialTags[minIndex].classList.add('highlight')
+
+            let id = specialTags[minIndex].id;
+            let a = document.querySelector('a[href="#'+id+'"]')
+            let li = a.parentNode;
+            let brotherAndMe = li.parentNode.children
+            for(let i = 0; i <brotherAndMe.length;i++){
+                brotherAndMe[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight');
         }
     </script>
     <script src="./resume.js"></script>
- 
+
 </body>
 
 </html>
