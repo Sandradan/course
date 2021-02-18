@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="self"></div>
+    <script>
+        // var parent = document.querySelector('#self')
+        // console.log(parent)
+        // //全局变量可耻，不能用，window.parent会被覆盖
+
+
+
+        // -function(){
+        //     var parent = document.querySelector('#self')
+        //     console.log(parent)
+        // }.call()
+
+
+        {
+
+            // var parent = document.querySelector('#self') //var会变为全局变量
+
+            let parent = document.querySelector('#self')// let在这个作用域中
+            console.log(parent)
+        }
+    </script>
+</body>
+
+</html>
