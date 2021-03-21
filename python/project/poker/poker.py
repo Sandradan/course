@@ -19,7 +19,6 @@ POKER_DICT = {
 
 }
 
-
 class PokerGame:
     def __init__(self, poker_number: int = 1, person_number: int = 4):
         self.poker_number = poker_number  # 几副牌
