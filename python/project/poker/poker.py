@@ -123,8 +123,7 @@ class PokerGame:
     def person_sorted_poker(self):
         for one_person_poker in self.person_poker_list:
             # print(one_person_poker)
-            one_person_poker.sort()
-            
+            one_person_poker.sort()    
 
 if __name__ == '__main__':
     obj = PokerGame()
